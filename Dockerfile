@@ -4,7 +4,7 @@ WORKDIR /app
 COPY build.gradle settings.gradle ./
 COPY src ./src
 
-RUN --mount=type=cache,target=/root/.gradle gradle clean bootJar --no-daemon
+RUN gradle clean bootJar --no-daemon
 
 FROM amazoncorretto:21.0.5-al2023-headless
 
